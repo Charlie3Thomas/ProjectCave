@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{E685C5D8-518B-A32A-F662-ADB2999668A7}</ProjectGuid>
+    <ProjectGuid>{FB016AA5-95EF-A6C5-7882-19C4B00351F3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,13 +56,13 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\Player\MovePlayerCam.cs" />
-    <Compile Include="Assets\Player\CameraController.cs" />
-    <Compile Include="Assets\Player\PlayerController.cs" />
     <Compile Include="Assets\Player\PlayerRigidbodySetup.cs" />
     <Compile Include="Assets\ApplyDecal.cs" />
     <Compile Include="Assets\DecalPopControl.cs" />
+    <Compile Include="Assets\Player\CameraController.cs" />
+    <Compile Include="Assets\Player\PlayerController.cs" />
+    <Compile Include="Assets\Player\MovePlayerCam.cs" />
+    <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
