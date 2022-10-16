@@ -251,8 +251,8 @@ Material:
     - _SubsurfaceMask: 1
     - _SupportDecals: 1
     - _SurfaceType: 1
-    - _SwayAggressiveness: 0.3
-    - _SwaySpeed: 5
+    - _SwayAggressiveness: 0
+    - _SwaySpeed: 0
     - _TexWorldScale: 1
     - _TexWorldScaleEmissive: 1
     - _Thickness: 1

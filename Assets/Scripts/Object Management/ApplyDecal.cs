@@ -14,8 +14,6 @@ public class ApplyDecal : MonoBehaviour
 
     private void OnEnable()
     {
-        
-
         if (decal == null)
         {
             Debug.LogError("No prefab assigned for decal");
@@ -49,14 +47,14 @@ public class ApplyDecal : MonoBehaviour
             {
 
                 Vector3 r_offset = new Vector3(
-                    Random.RandomRange(-r_spreadfactor, r_spreadfactor),
-                    Random.RandomRange(-r_spreadfactor, r_spreadfactor),
+                    Random.Range(-r_spreadfactor, r_spreadfactor),
+                    Random.Range(-r_spreadfactor, r_spreadfactor),
                     0);
                 Vector3 r_offset_rotation = this.transform.rotation * r_offset;
                 Vector3 r_direction = transform.forward + r_offset_rotation;
 
                 Ray r = new Ray(r_origin, r_direction);
-                if (Physics.Raycast(r, out hit_info, 10.0f, ~ignored_mask))
+                if (Physics.Raycast(r, out hit_info, 10.0f, ~ignored_mask) && hit_info.transform.tag != "Decal")
                 {
                     GameObject _decal = Instantiate(decal, hit_info.point, Quaternion.LookRotation(hit_info.normal * -1));
                     total_decals++;
