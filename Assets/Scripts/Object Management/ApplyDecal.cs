@@ -29,7 +29,7 @@ public class ApplyDecal : MonoBehaviour
             Decal(t);
         }
 
-        if (Input.GetKey(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             Debug.Log(total_decals);
         }

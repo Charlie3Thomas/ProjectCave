@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 586221751695525166}
   - component: {fileID: 586221751695525169}
   - component: {fileID: 586221751695525168}
-  - component: {fileID: 6051656821145313495}
+  - component: {fileID: -3309304929574257839}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Decal
@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &586221751695525169
 MeshFilter:
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &6051656821145313495
+--- !u!135 &-3309304929574257839
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,5 +95,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.25
   m_Center: {x: 0, y: 0, z: 0}
