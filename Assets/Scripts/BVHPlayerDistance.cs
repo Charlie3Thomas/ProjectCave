@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst;
 using UnityEngine;
 
+[BurstCompile]
 public class BVHPlayerDistance : MonoBehaviour
 {
     [SerializeField] private GameObject go_player;
@@ -42,23 +44,32 @@ public class BVHPlayerDistance : MonoBehaviour
 
     private bool PlayerInRange()
     {
-        if ((go_player.transform.position - this.transform.position).sqrMagnitude < 1200.0f)
+        float player_dist = (go_player.transform.position - this.transform.position).sqrMagnitude;
+        if ( player_dist < 1200.0f)
         {
             player_in_range = true;
             return true;
         }
         player_in_range = false;
+
+        if(player_dist > 3000 && player_dist < 4500)
+        {
+            t_updaterate = 5;
+            return false;
+        }
+        else if (player_dist > 4500 && player_dist < 7500)
+        {
+            t_updaterate = 7;
+            return false;
+        }
+        else if (player_dist > 7500)
+        {
+            t_updaterate = 10;
+            return false;
+        }
+
         return false;
     }
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.tag == "Decal")
-    //    {
-    //        Debug.Log("HELLO");
-    //        other.GetComponent<DecalSwitch>().SetUpdateStatus(true);
-    //    }
-    //}
 
     private void OnDrawGizmos()
     {

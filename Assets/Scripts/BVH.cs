@@ -7,6 +7,7 @@ public class BVH : MonoBehaviour
     [SerializeField] private GameObject bvh_upper;
     [SerializeField] private GameObject bvh_lower;
     [SerializeField] private GameObject bvh_node;
+    public int bvh_nodes_total = 0;
 
     private Vector3 lower_bounds_pos;
     private Vector3 upper_bounds_pos;
@@ -30,7 +31,7 @@ public class BVH : MonoBehaviour
         int max_z = (int)(upper_bounds_pos.z / 20);
 
         //Debug.Log(max_x + " " + max_x + " " + max_z);
-        int bvh_nodes_total = 0;
+        
         for (int x = 0; x <= max_x; x++)
         {
             for (int y = 0; y <= max_y; y++)
@@ -44,7 +45,7 @@ public class BVH : MonoBehaviour
             }
         }
 
-        Debug.Log(bvh_nodes_total);
+        Debug.Log(bvh_nodes_total + " BVH nodes generated.");
     }
 
 
