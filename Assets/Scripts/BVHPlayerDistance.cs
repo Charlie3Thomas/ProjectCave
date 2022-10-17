@@ -21,7 +21,7 @@ public class BVHPlayerDistance : MonoBehaviour
             Debug.LogError("There is no player object assigned to BVHPlayerDistance.cs");
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         t += Time.deltaTime;
         if (t > t_updaterate)

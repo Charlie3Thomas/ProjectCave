@@ -50,7 +50,7 @@ public class DecalSwitch : MonoBehaviour
             bvh_object.GetComponent<BVHPlayerDistance>().particle_list.Add(this);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         t += Time.deltaTime;
         if (can_update && t > t_updaterate)
