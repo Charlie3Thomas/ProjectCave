@@ -30,7 +30,7 @@ public class BVH : MonoBehaviour
         int max_z = (int)(upper_bounds_pos.z / 20);
 
         //Debug.Log(max_x + " " + max_x + " " + max_z);
-
+        int bvh_nodes_total = 0;
         for (int x = 0; x <= max_x; x++)
         {
             for (int y = 0; y <= max_y; y++)
@@ -39,11 +39,12 @@ public class BVH : MonoBehaviour
                 {
                     Vector3 node_pos = new(x * 20, y * 20, z * 20);
                     GameObject node = Instantiate(bvh_node, node_pos, this.transform.rotation, this.transform);
+                    bvh_nodes_total++;
                 }
             }
         }
 
-        //Debug.Log(bounds_distance);
+        Debug.Log(bvh_nodes_total);
     }
 
 
