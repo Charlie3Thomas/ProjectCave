@@ -54,7 +54,7 @@ public class ApplyDecal : MonoBehaviour
                 Vector3 r_direction = transform.forward + r_offset_rotation;
 
                 Ray r = new Ray(r_origin, r_direction);
-                if (Physics.Raycast(r, out hit_info, 10.0f, ~ignored_mask) && hit_info.transform.tag != "Decal")
+                if (Physics.Raycast(r, out hit_info, 10.0f, ~ignored_mask) && hit_info.transform.tag != "Decal" && hit_info.distance > 1.0f)
                 {
                     GameObject _decal = Instantiate(decal, hit_info.point, Quaternion.LookRotation(hit_info.normal * -1));
                     total_decals++;

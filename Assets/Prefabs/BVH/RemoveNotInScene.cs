@@ -30,7 +30,7 @@ public class RemoveNotInScene : MonoBehaviour
         if (other.gameObject.tag == "Cave")
         {
             collosion_occurred = true;
-            Debug.Log("Collision");
+            //Debug.Log("Collision");
             //Destroy(this.gameObject);
         }
     }

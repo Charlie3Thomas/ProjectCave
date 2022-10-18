@@ -17,5 +17,6 @@ public class RandomRune : MonoBehaviour
 
         mat = this.gameObject.GetComponent<Renderer>().material;
         mat.SetVector("_RandomSeed", rn);
+        Destroy(this);
     }
 }

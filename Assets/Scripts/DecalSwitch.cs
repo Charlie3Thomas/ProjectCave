@@ -14,9 +14,12 @@ public class DecalSwitch : MonoBehaviour
     private GameObject[] bvh_objects;
     private float t;
     public bool can_update = true;
+    private Vector3 ds_position;
 
     private void OnEnable()
     {
+        ds_position = this.transform.position;
+
         go_player = GameObject.FindGameObjectWithTag("Player");
         go_parent = GameObject.FindGameObjectWithTag("GameController");        
 
@@ -32,7 +35,7 @@ public class DecalSwitch : MonoBehaviour
         bool first_loop = true;
         foreach (GameObject _o in bvh_objects)
         {
-            this_distance = (_o.transform.position - this.transform.position).sqrMagnitude;
+            this_distance = (_o.transform.position - ds_position).sqrMagnitude;
             if (first_loop) 
             {
                 first_loop = false;
@@ -83,7 +86,7 @@ public class DecalSwitch : MonoBehaviour
 
     private void RenderState()
     {
-        if ((go_player.transform.position - this.transform.position).sqrMagnitude > 1000.0f)
+        if ((go_player.transform.position - ds_position).sqrMagnitude > 1000.0f)
         {
             can_update = false;
             Destroy(decal);
@@ -102,7 +105,7 @@ public class DecalSwitch : MonoBehaviour
     private GameObject NewDecal()
     {
         GameObject _decal;
-        _decal = Instantiate(go_decal, this.transform.position, this.transform.rotation);
+        _decal = Instantiate(go_decal, ds_position, this.transform.rotation);
         _decal.transform.parent = this.transform;
 
 

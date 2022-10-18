@@ -11,11 +11,14 @@ public class BVHPlayerDistance : MonoBehaviour
     [SerializeField] public List<DecalSwitch> particle_list = new List<DecalSwitch>();
     private float t = 0.0f;
     public bool player_in_range;
+    private Vector3 bvh_node_position;
 
 
 
     private void OnEnable()
     {
+        bvh_node_position = this.transform.position;
+
         go_player = GameObject.FindGameObjectWithTag("Player");
         if (go_player == null)
             Debug.LogError("There is no player object assigned to BVHPlayerDistance.cs");
@@ -44,7 +47,7 @@ public class BVHPlayerDistance : MonoBehaviour
 
     private bool PlayerInRange()
     {
-        float player_dist = (go_player.transform.position - this.transform.position).sqrMagnitude;
+        float player_dist = (go_player.transform.position - bvh_node_position).sqrMagnitude;
         if ( player_dist < 1200.0f)
         {
             player_in_range = true;
@@ -75,7 +78,7 @@ public class BVHPlayerDistance : MonoBehaviour
     {
         if (player_in_range)
         {
-            Gizmos.DrawWireCube(this.transform.position, new Vector3(20, 20, 20));
+            Gizmos.DrawWireCube(bvh_node_position, new Vector3(20, 20, 20));
         }
     }
 

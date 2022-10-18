@@ -46,8 +46,8 @@ public class BVH : MonoBehaviour
         }
 
         Debug.Log(bvh_nodes_total + " BVH nodes generated.");
+        Destroy(this);
     }
-
 
 
 }
